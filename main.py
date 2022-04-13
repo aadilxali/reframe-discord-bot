@@ -1,5 +1,5 @@
 import os
-import discord.ext import commands
+from discord.ext import commands
 import openai
 client = commands.Bot(command_prefix='!reframe')
 
