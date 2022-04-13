@@ -1,8 +1,7 @@
 import os
-import discord
+import discord.ext import commands
 import openai
-
-client = discord.Client()
+client = commands.Bot(command_prefix='!reframe')
 
 @client.event
 async def on_ready():
@@ -11,9 +10,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-  if message.author != client.user:
-    if message.content.startswith('!reframe'):
-
+    if message.author != client.user:
       prompt = ("The following is a list of negative thoughts which are then reframed with in a more positive, hopeful way:" + "\n\nNegative: this will never work out\nPositive: I'm having trouble right now, but it's not a big deal if this doesn't work out."
       + "\nPositive: I'm having some trouble right now, but I'm making plans to solve those problems."
       + "\n\nNegative: why do i suck at this\nPositive: I have learned a lot about this topic. I want to keep learning more about it so I'll keep up the effort.\nPositive: I know what I need to improve."
